@@ -1,0 +1,87 @@
+<head>
+   <script src="<?= $wwwUrl ?>/js/cart.js"></script>
+   <script src="<?= $wwwUrl ?>/js/mainCart.js"></script>
+   <link rel="stylesheet" href="<?= $wwwUrl ?>/css/cart.css">
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+         <div class="row-title">
+            <h1>PANIER</h1>
+         </div>
+      </div>
+      <div class="cart-grid row">
+         <div id="productsCart" class="cart-grid-body col-lg-7 col-md-9">
+         </div>
+         <div class="cart-grid-right col-lg-4 col-md-4">
+            <div class="row card">
+               <div class="totalprice">
+                  <b>Total</b> : 
+                  <h2><span id="totalPrice"></span></h2>
+               </div>
+               
+               <?php if(!isset($_SESSION['id'])) { ?>
+               <div style="margin: auto; width: 70%; background-color:rgb(223, 221, 250);">
+                  <b>Veuillez vous connecter pour continuer</b><br>
+                  <a href="<?= $requestUrl ?>/user/register">Nouvel utilisateur</a><br>
+                  <a href="<?= $requestUrl ?>/user/connexion">Se connecter</a>
+               </div>
+               <?php } else { ?>
+               <button type="button" id="submitCart"class="btn btn-primary cart-payment">Payer</button> 
+               <?php } ?>
+            </div>
+         </div>
+      </div>
+   </div>
+   </div>
+   <div id="firstCard" style="display: none;">
+      <div class="row one-card card col-sm-12">
+         <div class="col-md-4 card-picture">
+            <img src="">
+         </div>
+         <div class="col-md-8 card-content">
+            <div class="row">
+               <div class="col-md-8">
+                  <p class="card-title"></p>
+               </div>
+               <div class="col-md-4">
+                  <p class="card-delete"><a href="#" class="icon-trash link-cart-item">Supprimer</a></p>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-3 card-quantity">
+                  <input type="text" maxlength="2" value="" id="quantity" style="width: 30px; text-align: center;"/>
+               </div>
+               <div class="col-md-5">
+                  <p class="card-price"></p>
+               </div>
+               <div class="col-md-2 text-xs-right">
+                  <span class="glyphicon glyphicon-trash"></span>                
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div id="myModal"class="modal" tabindex="-1" role="dialog">
+      <div class="modal-dialog" role="document">
+         <div class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title">Paiement</h5>
+               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <p id="modalBodyContent"></p>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" onclick="location.href='<?= $requestUrl ?>/user/userOrder';">Mes commandes</button>
+               <button type="button" class="btn btn-secondary" onclick="location.href='<?= $requestUrl ?>';">Accueil</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</body>
+
+
+

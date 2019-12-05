@@ -1,0 +1,99 @@
+<head>
+   <title>Enregistrement</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/utilForm.css">
+   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/formRegister.css">
+</head>
+
+<header>
+   <?php if(isset($errorRegister)){ ?> <!-- Si la variable $flashBag contient un message -->
+   <h2 style="color: red;"><?= $errorRegister->fetchMessage() ?></h2>
+   <?php }; ?><!--  On affiche le message d'erreur du formulaire  -->
+
+   <?php if(isset($errorMail)){ ?> <!-- Si la variable $flashBag contient un message -->
+   <h2 style="color: red;"><?= $errorMail->fetchMessage() ?></h2>
+   <?php }; ?><!--  On affiche le message que le mail entré existe déjà  -->
+
+   <?php if(isset($errorEmpty)){ ?> <!-- Si la variable $flashBag contient un message -->
+   <h2 style="color: red;"><?= $errorEmpty->fetchMessage() ?></h2>
+   <?php }; ?><!--  On affiche le message que le mail entré existe déjà  -->
+</header>
+
+<body style="background-color: #999999;">
+   <div class="limiter">
+      <div class="container-login100">
+         <div class="login100-more" style="background-image: url('<?= $wwwUrl ?>/images/watchRegister.jpg');"></div>
+         <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
+            <form action="./register" method="post" class="login100-form validate-form">
+               <span class="login100-form-title p-b-59">
+               Nouvel utilisateur
+               </span>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Nom</span>
+                  <input class="input100" type="text" name="lastName" minlength="2" maxlength="40" placeholder="Nom" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Prénom</span>
+                  <input class="input100" type="text" name="firstName" minlength="2" maxlength="20" placeholder="Prénom" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Email</span>
+                  <input class="input100" type="email" name="email" maxlength="50" placeholder="Email@example.com" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Password</span>
+                  <input class="input100" type="password" name="password" minlength="4" maxlength="40" placeholder="*************" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Adresse</span>
+                  <input class="input100" type="text" name="address" minlength="6" maxlength="250" placeholder="Adresse" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Ville</span>
+                  <input class="input100" type="text" name="city" maxlength="40" placeholder="Ville" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Pays</span>
+                  <input class="input100" type="text" name="country" maxlength="20" placeholder="Pays" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Code postal</span>
+                  <input class="input100" type="text" maxlength="8" name="zipCode" placeholder="Code postal" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Date de naissance</span>
+                  <input class="input100" type="date" name="birthDate" placeholder="Date de naissance" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="wrap-input100 validate-input">
+                  <span class="label-input100">Téléphone</span>
+                  <input class="input100" type="number" minlength="6" maxlength="10" name="phone" placeholder="06 06 06 06 06" required>
+                  <span class="focus-input100"></span>
+               </div>
+               <div class="container-login100-form-btn">
+                  <div class="wrap-login100-form-btn">
+                     <div class="login100-form-bgbtn"></div>
+                     <button type="submit" class="login100-form-btn">
+                     Enregistrer
+                     </button>
+                  </div>
+                  <a href="<?= $requestUrl ?>/user/connexion" class="dis-block txt3 hov1 p-r-30 p-t-10 p-b-10 p-l-30">
+                  Se connecter
+                  <i class="fa fa-long-arrow-right m-l-5"></i>
+                  </a>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</body>

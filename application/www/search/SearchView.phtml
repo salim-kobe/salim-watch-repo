@@ -1,0 +1,22 @@
+<h1>Recherche</h1>
+
+<body>
+   <?php if(isset($errorSearch)) { ?>
+   <h4><?= $errorSearch->fetchMessage() ?></h4>
+   <?php } else { ?>
+   <div class = "blockProducts">
+   <?php foreach ($resultSearch as $search): ?>
+   <div class = 'products'>
+      <h2><a href="<?= $requestUrl ?>/products/product?id=<?=$search['Id']?>"><?= $search['Name'] ?></a></h2>
+      <p><?= $search['Description'] ?></p>
+      <a href="<?= $requestUrl ?>/products/product?id=<?=$search['Id']?>"><img src="<?= $wwwUrl ?>/images/watch/<?=  $search['Photo'] ?>"></a>
+      <h3><?= number_format($search['Price'],2) ?> €</h3>
+   </div>
+   <?php endforeach ?>
+   <?php } ?>
+</body>
+
+
+
+
+        

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width" />
+      <title>Salim Watch</title>
+      <!-- Feuilles de styles de l'application -->
+      <link rel="stylesheet" href="<?= $wwwUrl ?>/css/normalize-3.0.3.min.css">
+      <link rel="stylesheet" href="<?= $wwwUrl ?>/css/font-awesome-4.3.0.min.css">
+      <link rel="stylesheet" href="<?= $wwwUrl ?>/css/watch.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Librairie jQuery -->
+      <script src="http://code.jquery.com/jquery-2.1.0.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!-- JavaScript de l'application -->
+      <script src="<?= $wwwUrl ?>/js/utilities.js"></script>
+      <script src="<?= $wwwUrl ?>/js/classes/CartSession.class.js"></script>
+   </head>
+
+   <!-- En-tête commune -->
+   <header>
+      <nav>
+         <div class="menu">
+            <a href="<?= $requestUrl ?>"><img id="logo" src="<?= $wwwUrl ?>/images/logo.png" alt="logo" /><span> Salim</span></a>
+            <a href="<?= $requestUrl ?>">Accueil</a>
+            <a href="<?= $requestUrl ?>/products/listProducts">Produits</a>
+            <a href="<?= $requestUrl ?>/contact">Contact</a>
+            <form action="<?= $requestUrl ?>/search" id="search" method="get">
+               <input id="search" name="search" type="text" placeholder="Rechercher" />
+               <input id="search-btn" type="submit" value="Rechercher" />
+            </form>
+            <?php if(!isset($_SESSION['id'])) { ?>
+            <a href="<?= $requestUrl ?>/user/register">Nouvel utilisateur</a>
+            <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
+            <a href="<?= $requestUrl ?>/user/connexion">Connexion</a>
+            <?php } else { ?>
+            
+            <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
+            <?php  echo '<span class="userName">'.'Bonjour ' .$_SESSION['firstName'].'</span>';?>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-fw fa-user"></i></a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+               <a class="dropdown-item" href="<?= $requestUrl ?>/user/userInfo/">Mon compte</a>
+               <a class="dropdown-item" href="<?= $requestUrl ?>/user/userOrder">Mes commandes</a>
+               <a class="dropdown-item" href="<?= $requestUrl ?>/user/deconnexion">Se déconnecter</a>
+            </div>
+            </li>
+            <?php } ?>
+         </div>
+      </nav>
+   </header>
+   
+   <body>
+      <main>
+         <!-- Affichage du template lié à la vue -->
+         <?php include $this->viewData['template'] ?>
+      </main>
+
+      <!-- Pied de page commun -->
+      <footer>
+         <div class="basPage">
+            <ul class="link-list">
+               <li><img src="<?= $wwwUrl ?>/images/payment/visa.png" alt="Visa"></li>
+               <li><img src="<?= $wwwUrl ?>/images/payment/mastercard.png" alt="MasterCard"></li>
+               <li><img src="<?= $wwwUrl ?>/images/payment/paypal.png" alt="PayPal"></li>
+            </ul>
+            <p>Copyright © 2019 Salim - <a href="<?= $requestUrl ?>/contact">nous contacter</a></p>
+         </div>
+      </footer>
+
+   </body>
+</html>
