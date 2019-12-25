@@ -1,24 +1,22 @@
-<head>
-   <link rel="stylesheet" href="<?= $wwwUrl ?>/css/order.css">
-</head>
+<!-- Ce code CSS n'est chargé que depuis la page commande -->
+<link rel="stylesheet" href="<?= $wwwUrl ?>/css/order.css">
+
 
 <h1>Mes commandes</h1>
 
-<body>
-   <div class = "blockOrders">
-      <?php foreach ($finalOrder as $orderId => $orders): ?>
-      <h2>Commande n° <?= $orderId ?></h2>
-        <?php foreach ($orders as $order): ?>
-        <div class = 'orders'>
-          <p><strong><?= $order['Name'] ?></strong></p>
-          <img src="<?= $wwwUrl ?>/images/watch/<?=  $order['Photo'] ?>">
-          <p>Date : <strong><?= $order['CreationTimestamp'] ?></strong></p>
-          <p>Quantité : <strong><?= $order['QuantityOrdered'] ?></strong></p>
-          <p>Prix unitaire : <strong><?= number_format($order['Price'],2) ?> €</strong></p>
-        <?php endforeach ?>
-          <h3>Total de la commande : <?= number_format($order['TotalAmount'],2) ?> €</h3>
-      </div>
-      <hr class="style-eight" />
+<div class = "blockOrders">
+   <?php foreach ($finalOrder as $orderId => $orders): ?>
+   <h2>Commande n° <?= $orderId ?></h2>
+      <?php foreach ($orders as $order): ?>
+      <div class = 'orders'>
+         <p><strong><?= $order['Name'] ?></strong></p>
+         <img src="<?= $wwwUrl ?>/images/watch/<?=  $order['Photo'] ?>">
+         <p>Date : <strong><?= $order['CreationTimestamp'] ?></strong></p>
+         <p>Quantité : <strong><?= $order['QuantityOrdered'] ?></strong></p>
+         <p>Prix unitaire : <strong><?= number_format($order['Price'],2) ?> €</strong></p>
       <?php endforeach ?>
+         <h3>Total de la commande : <?= number_format($order['TotalAmount'],2) ?> €</h3>
    </div>
-</body
+   <hr class="style-eight" />
+   <?php endforeach ?>
+</div>

@@ -1,6 +1,6 @@
 <h1>Recherche</h1>
 
-<body>
+<div>
    <?php if(isset($errorSearch)) { ?>
    <h4><?= $errorSearch->fetchMessage() ?></h4>
    <?php } else { ?>
@@ -14,9 +14,4 @@
    </div>
    <?php endforeach ?>
    <?php } ?>
-</body>
-
-
-
-
-        
+</div>

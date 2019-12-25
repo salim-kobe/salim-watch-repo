@@ -1,43 +1,36 @@
-<head>
+<!-- Ce code JavaScript n'est chargé que depuis la page produit -->
 <script src="<?= $wwwUrl ?>/js/mainCart.js"></script>
-</head>
+
 
 <h1>Produit</h1>
 
-<body>
-   <table class="generic-table meal-list">
-      <caption></caption>
-      <ul>
-         <?php foreach ($watch as $watchs): ?>
-         <div>
-            <input id="productId" type="hidden" value=<?= $watchs['id'] ?>>
-            <h2>
-               <div id="productName"><?= $watchs['name'] ?></div>
-            </h2>
-            <p>
-            <div id="productDescription"><?= $watchs['description'] ?></div >
-            </p>
-            <img id="productPicture" src="<?= $wwwUrl ?>/images/watch/<?=  $watchs['photo'] ?>">
-            <h2>
-               <div id="productPrice"><?= number_format($watchs['price'],2) ?> €</div >
-            </h2>
-         </div>
-         <?php endforeach ?>
+<table class="generic-table meal-list">
+   <caption></caption>
+   <ul>
+      <?php foreach ($watch as $watchs): ?>
+      <div>
+         <input id="productId" type="hidden" value=<?= $watchs['id'] ?>>
+         <h2>
+            <div id="productName"><?= $watchs['name'] ?></div>
+         </h2>
+         <p>
+         <div id="productDescription"><?= $watchs['description'] ?></div >
+         </p>
+         <img id="productPicture" src="<?= $wwwUrl ?>/images/watch/<?=  $watchs['photo'] ?>">
+         <h2>
+            <div id="productPrice"><?= number_format($watchs['price'],2) ?> €</div >
+         </h2>
+      </div>
+      <?php endforeach ?>
          
-         <div class="productQuantity">
-            <h4>Quantité</h4>
-            <input id="productQuantity" type="text" maxlength="2" value=""/>
-            <button class="button" id="submitProduct" name="valid">Ajouter au panier</a></button>
-         </div>
-      </ul>
-   </table>
+      <div class="productQuantity">
+         <h4>Quantité</h4>
+         <input id="productQuantity" type="text" maxlength="2" value=""/>
+         <button class="button" id="submitProduct" name="valid">Ajouter au panier</a></button>
+      </div>
+   </ul>
+</table>
 
-   <div style="display: none;" class="alert alert-success" role="alert"></div>
-   <div style="display: none;" class="alert alert-danger" role="alert"></div>
-</body>
-
-
-
-
-
+<div style="display: none;" class="alert alert-success" role="alert"></div>
+<div style="display: none;" class="alert alert-danger" role="alert"></div>
         

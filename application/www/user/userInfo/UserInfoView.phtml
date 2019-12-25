@@ -1,18 +1,18 @@
 <h1>Mon compte</h1>
 
-<body>
-    <div class = "products">
-        <?php foreach ($users as $user): ?>
-            <h3>Prénom : <h2><?= $user['firstName'] ?><h2></h3><br>
-            <h3>Nom : <h2><?= $user['lastName'] ?><h2></h3><br>
-            <h3>Email : <h2><?= $user['email'] ?><h2></h3><br>
-            <h3>Date de naissance : <h2><?= $user['birthDate'] ?><h2></h3><br>
-            <h3>Adresse : <h2><?= $user['address'] ?><h2></h3><br>
-            <h3>Ville : <h2><?= $user['city'] ?><h2></h3><br>
-            <h3>Code postal : <h2><?= $user['zipCode'] ?><h2></h3><br>
-            <h3>Pays : <h2><?= $user['country'] ?><h2></h3><br>
-            <h3>Téléphone : <h2><?= $user['phone'] ?><h2></h3>
-            </div>
-        <?php endforeach ?>
-    </div>
-</body>
+
+<div class = "products">
+    <?php foreach ($users as $user): ?>
+        <h3>Prénom : <h2><?= $user['firstName'] ?><h2></h3><br>
+        <h3>Nom : <h2><?= $user['lastName'] ?><h2></h3><br>
+        <h3>Email : <h2><?= $user['email'] ?><h2></h3><br>
+        <h3>Date de naissance : <h2><?= $user['birthDate'] ?><h2></h3><br>
+        <h3>Adresse : <h2><?= $user['address'] ?><h2></h3><br>
+        <h3>Ville : <h2><?= $user['city'] ?><h2></h3><br>
+        <h3>Code postal : <h2><?= $user['zipCode'] ?><h2></h3><br>
+        <h3>Pays : <h2><?= $user['country'] ?><h2></h3><br>
+        <h3>Téléphone : <h2><?= $user['phone'] ?><h2></h3>
+        </div>
+    <?php endforeach ?>
+</div>
+

@@ -1,13 +1,9 @@
-<head>
-   <title>Enregistrement</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Ce code CSS n'est chargé que depuis la page enregistrement -->
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/utilForm.css">
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/formRegister.css">
 
-   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/utilForm.css">
-   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/formRegister.css">
-</head>
 
-<header>
+<div>
    <?php if(isset($errorRegister)){ ?> <!-- Si la variable $flashBag contient un message -->
    <h2 style="color: red;"><?= $errorRegister->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message d'erreur du formulaire  -->
@@ -19,9 +15,9 @@
    <?php if(isset($errorEmpty)){ ?> <!-- Si la variable $flashBag contient un message -->
    <h2 style="color: red;"><?= $errorEmpty->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message que le mail entré existe déjà  -->
-</header>
+</div>
 
-<body style="background-color: #999999;">
+<div style="background-color: #999999;">
    <div class="limiter">
       <div class="container-login100">
          <div class="login100-more" style="background-image: url('<?= $wwwUrl ?>/images/watchRegister.jpg');"></div>
@@ -96,4 +92,4 @@
          </div>
       </div>
    </div>
-</body>
+</div>
