@@ -1,18 +1,13 @@
 <h1>Produits</h1>
 
-<body>
-   <div class = "blockProducts">
-      <?php foreach ($watch as $watchs): ?>
-      <div class = 'products'>
-         <h2><a href="<?= $requestUrl ?>/products/product?id=<?=$watchs['id']?>"><?= $watchs['name'] ?></a></h2>
-         <p><?= $watchs['description'] ?></p>
-         <a href="<?= $requestUrl ?>/products/product?id=<?=$watchs['id']?>"><img src="<?= $wwwUrl ?>/images/watch/<?=  $watchs['photo'] ?>"></a>
-         <h3><?= number_format($watchs['price'],2) ?> €</h3>
-      </div>
-      <?php endforeach ?>
+<div class = "blockProducts">
+   <?php foreach ($watch as $watchs): ?>
+   <div class = 'products'>
+      <h2><a href="<?= $requestUrl ?>/products/product?id=<?=$watchs['id']?>"><?= $watchs['name'] ?></a></h2>
+      <p><?= $watchs['description'] ?></p>
+      <a href="<?= $requestUrl ?>/products/product?id=<?=$watchs['id']?>"><img src="<?= $wwwUrl ?>/images/watch/<?=  $watchs['photo'] ?>"></a>
+      <h3><?= number_format($watchs['price'],2) ?> €</h3>
    </div>
-</body>
-
-
-
-        
+   <?php endforeach ?>
+</div>
+      

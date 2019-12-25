@@ -1,19 +1,15 @@
-<head>
-   <title>Login</title>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Ce code CSS n'est chargé que depuis la page connexion -->
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/utilForm.css">
+<link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/formConnect.css">
 
-   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/utilForm.css">
-   <link rel="stylesheet" type="text/css" href="<?= $wwwUrl ?>/css/formConnect.css">
-</head>
 
-<header>
+<div>
    <?php if(isset($errorConnect)){ ?> <!-- Si la variable $flashBag contient un message -->
    <h2 style="color: red;"><?= $errorConnect->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message  -->
-</header>
+</div>
 
-<body style="background-color: #999999;">
+<div style="background-color: #999999;">
    <div class="limiter">
       <div class="container-login100" style="background-image: url('<?= $wwwUrl ?>/images/watchConnect.jpg');">
          <div class="wrap-login100 p-t-30 p-b-50">
@@ -42,4 +38,4 @@
          </div>
       </div>
    </div>
-</body>
+</div>

@@ -9,7 +9,7 @@ class Database
 	public function __construct() //connexion à la BD
 	{
 		$configuration = new Configuration();
-
+		
 		$this->pdo = new PDO
 		(
 			$configuration->get('database', 'dsn'),
