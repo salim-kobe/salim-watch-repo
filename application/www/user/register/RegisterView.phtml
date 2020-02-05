@@ -5,22 +5,22 @@
 
 <div>
    <?php if(isset($errorRegister)){ ?> <!-- Si la variable $flashBag contient un message -->
-   <h2 style="color: red;"><?= $errorRegister->fetchMessage() ?></h2>
+   <h2 class="errorRegister"><?= $errorRegister->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message d'erreur du formulaire  -->
 
    <?php if(isset($errorMail)){ ?> <!-- Si la variable $flashBag contient un message -->
-   <h2 style="color: red;"><?= $errorMail->fetchMessage() ?></h2>
+   <h2 class="errorMail"><?= $errorMail->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message que le mail entré existe déjà  -->
 
    <?php if(isset($errorEmpty)){ ?> <!-- Si la variable $flashBag contient un message -->
-   <h2 style="color: red;"><?= $errorEmpty->fetchMessage() ?></h2>
+   <h2 class="errorEmpty"><?= $errorEmpty->fetchMessage() ?></h2>
    <?php }; ?><!--  On affiche le message que le mail entré existe déjà  -->
 </div>
 
-<div style="background-color: #999999;">
+<div class="mainRegister">
    <div class="limiter">
       <div class="container-login100">
-         <div class="login100-more" style="background-image: url('<?= $wwwUrl ?>/images/watchRegister.jpg');"></div>
+         <div class="login100-more"></div>
          <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
             <form action="./register" method="post" class="login100-form validate-form">
                <span class="login100-form-title p-b-59">

@@ -20,7 +20,7 @@
                <h2><span id="totalPrice"></span></h2>
             </div>
             <?php if(!isset($_SESSION['id'])) { ?>
-            <div style="margin: auto; width: 70%; background-color:rgb(223, 221, 250);">
+            <div class="notConnect">
                <b>Veuillez vous connecter pour continuer</b><br>
                <a href="<?= $requestUrl ?>/user/register">Nouvel utilisateur</a><br>
                <a href="<?= $requestUrl ?>/user/connexion">Se connecter</a>
@@ -33,7 +33,7 @@
    </div>
 </div>
 </div>
-<div id="firstCard" style="display: none;">
+<div id="firstCard">
    <div class="row one-card card col-sm-12">
       <div class="col-md-4 card-picture">
          <img src="">
@@ -49,7 +49,7 @@
          </div>
          <div class="row">
             <div class="col-md-3 card-quantity">
-               <input type="text" maxlength="2" value="" id="quantity" style="width: 30px; text-align: center;"/>
+               <input type="text" maxlength="2" value="" id="quantity"/>
             </div>
             <div class="col-md-5">
                <p class="card-price"></p>

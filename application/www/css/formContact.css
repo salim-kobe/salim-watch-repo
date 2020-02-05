@@ -144,6 +144,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Login100 more ]*/
 .login100-more {
+  background-image: url('../images/contact.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -387,6 +388,22 @@ iframe {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
+}
+
+.mainContact {
+  background-color: #999999;
+}
+
+.validMessage {
+  color: green;
+}
+
+.errorContact {
+  color: red;
+}
+
+iframe {
+  border:0;
 }
 
 

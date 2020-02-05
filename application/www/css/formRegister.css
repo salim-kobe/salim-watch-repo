@@ -144,6 +144,7 @@ iframe {
 /*------------------------------------------------------------------
 [ Login100 more ]*/
 .login100-more {
+  background-image: url('../images/watchRegister.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -379,6 +380,22 @@ iframe {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
+}
+
+.errorRegister {
+  color: red;
+}
+
+.errorMail {
+  color: red;
+}
+
+.errorEmpty {
+  color: red;
+}
+
+.mainRegister {
+  background-color: #999999;;
 }
 
 /* Media Queries */

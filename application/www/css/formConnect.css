@@ -13,7 +13,9 @@ textarea:focus, input:focus {
   border-color: transparent !important;
 }
 
-
+.mainConnect {
+  background-color: #999999;
+}
 
 label {
   margin: 0;
@@ -56,6 +58,7 @@ iframe {
 }
 
 .container-login100 {
+  background-image: url('../images/watchConnect.jpg');
   width: 100%;  
   min-height: 100vh;
   display: -webkit-box;
@@ -373,6 +376,10 @@ iframe {
 .alert-validate:hover:before {
   visibility: visible;
   opacity: 1;
+}
+
+.errorConnect {
+  color: red;
 }
 
 /* Media Queries */

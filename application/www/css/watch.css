@@ -135,6 +135,14 @@ h2 {
 	display: flex;
 }
 
+.alert-success {
+	display: none;
+}
+
+.alert-danger {
+	display: none;
+}
+
 
 /* Bas de page */
 

@@ -5,17 +5,17 @@
 
 <div>
    <?php if(isset($validMessage)){ ?> <!-- Si la variable contient un message -->
-   <h2 style="color: green;"><?= $validMessage->fetchMessage() ?></h2><!-- On affiche le message -->
+   <h2 class="validMessage"><?= $validMessage->fetchMessage() ?></h2><!-- On affiche le message -->
    <?php }; ?>
    <?php if(isset($errorContact)){ ?> 
-   <h2 style="color: red;"><?= $errorContact->fetchMessage() ?></h2>
+   <h2 class="errorContact"><?= $errorContact->fetchMessage() ?></h2>
    <?php }; ?>
 </div>
 
-<div style="background-color: #999999;">
+<div class="mainContact">
    <div class="limiter">
       <div class="container-login100">
-         <div class="login100-more" style="background-image: url('<?= $wwwUrl ?>/images/contact.jpg');"></div>
+         <div class="login100-more"></div>
          <div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
             <form action="<?= $requestUrl ?>/contact" method="post" class="login100-form validate-form">
                <span class="login100-form-title p-b-59">
@@ -48,5 +48,5 @@
          </div>
       </div>
    </div>
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.0263458493882!2d-118.26951788663767!3d34.043195282448174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b85dea2a93%3A0x1ff47c3ceb7bb2d5!2sStaples%20Center!5e0!3m2!1sfr!2sfr!4v1571855075546!5m2!1sfr!2sfr" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3306.0263458493882!2d-118.26951788663767!3d34.043195282448174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2c7b85dea2a93%3A0x1ff47c3ceb7bb2d5!2sStaples%20Center!5e0!3m2!1sfr!2sfr!4v1571855075546!5m2!1sfr!2sfr" width="100%" height="450" frameborder="0" allowfullscreen=""></iframe>
 </div>
