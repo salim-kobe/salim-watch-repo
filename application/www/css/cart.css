@@ -10,6 +10,12 @@
 	padding-top: 20px;
 }
 
+.notConnect {
+	margin: auto; 
+	width: 70%; 
+	background-color:rgb(223, 221, 250);
+}
+
 .card {
 	position: relative;
 	display: block;
@@ -17,6 +23,15 @@
 	margin-top: 10px;
 	background-color: #fff;
 	border: none !important;
+}
+
+#firstCard {
+	display: none;
+}
+
+#quantity {
+	width: 30px; 
+	text-align: center;
 }
 
 .cart-grid-body,

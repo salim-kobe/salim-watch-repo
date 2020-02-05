@@ -19,40 +19,39 @@
       <script src="<?= $wwwUrl ?>/js/classes/CartSession.class.js"></script>
    </head>
 
-   <!-- En-tête commune -->
-   <header>
-      <nav>
-         <div class="menu">
-            <a href="<?= $requestUrl ?>"><img id="logo" src="<?= $wwwUrl ?>/images/logo.png" alt="logo" /><span> Salim</span></a>
-            <a href="<?= $requestUrl ?>">Accueil</a>
-            <a href="<?= $requestUrl ?>/products/listProducts">Produits</a>
-            <a href="<?= $requestUrl ?>/contact">Contact</a>
-            <form action="<?= $requestUrl ?>/search" method="get">
-               <input id="search" name="search" type="text" placeholder="Rechercher" />
-               <input id="search-btn" type="submit" value="Rechercher" />
-            </form>
-            <?php if(!isset($_SESSION['id'])) { ?>
-            <a href="<?= $requestUrl ?>/user/register">Nouvel utilisateur</a>
-            <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
-            <a href="<?= $requestUrl ?>/user/connexion">Connexion</a>
-            <?php } else { ?>
-            
-            <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
-            <?php  echo '<span class="userName">'.'Bonjour ' .$_SESSION['firstName'].'</span>';?>
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-user"></i></a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-               <a class="dropdown-item" href="<?= $requestUrl ?>/user/userInfo/">Mon compte</a>
-               <a class="dropdown-item" href="<?= $requestUrl ?>/user/userOrder">Mes commandes</a>
-               <a class="dropdown-item" href="<?= $requestUrl ?>/user/deconnexion">Se déconnecter</a>
-            </div>
-            </li>
-            <?php } ?>
-         </div>
-      </nav>
-   </header>
-   
    <body>
+      <!-- En-tête commune -->
+      <header>
+         <nav>
+            <div class="menu">
+               <a href="<?= $requestUrl ?>"><img id="logo" src="<?= $wwwUrl ?>/images/logo.png" alt="logo" /><span> Salim</span></a>
+               <a href="<?= $requestUrl ?>">Accueil</a>
+               <a href="<?= $requestUrl ?>/products/listProducts">Produits</a>
+               <a href="<?= $requestUrl ?>/contact">Contact</a>
+               <form action="<?= $requestUrl ?>/search" method="get">
+                  <input id="search" name="search" type="text" placeholder="Rechercher" />
+                  <input id="search-btn" type="submit" value="Rechercher" />
+               </form>
+               <?php if(!isset($_SESSION['id'])) { ?>
+               <a href="<?= $requestUrl ?>/user/register">Nouvel utilisateur</a>
+               <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
+               <a href="<?= $requestUrl ?>/user/connexion">Connexion</a>
+               <?php } else { ?>
+               <a href="<?= $requestUrl ?>/cart/cart">Panier</a>
+               <?php  echo '<span class="userName">'.'Bonjour ' .$_SESSION['firstName'].'</span>';?>
+               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               <i class="fa fa-fw fa-user"></i></a>
+               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="<?= $requestUrl ?>/user/userInfo/">Mon compte</a>
+                  <a class="dropdown-item" href="<?= $requestUrl ?>/user/userOrder">Mes commandes</a>
+                  <a class="dropdown-item" href="<?= $requestUrl ?>/user/deconnexion">Se déconnecter</a>
+               </div>
+               </li>
+               <?php } ?>
+            </div>
+         </nav>
+      </header>
+
       <main>
          <!-- Affichage du template lié à la vue -->
          <?php include $this->viewData['template'] ?>
@@ -69,6 +68,6 @@
             <p>Copyright © 2019 Salim - <a href="<?= $requestUrl ?>/contact">nous contacter</a></p>
          </div>
       </footer>
-
+      
    </body>
 </html>
